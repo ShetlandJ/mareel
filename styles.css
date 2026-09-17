@@ -410,7 +410,7 @@ h1 {
 .phone {
   width: 290px;
   max-width: 100%;
-  height: 383px;
+  height: 374px;
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
@@ -580,6 +580,92 @@ h1 {
   padding: 2px 6px;
 }
 
+/* Screen marker inside a showtime chip. Screen is a property of the
+   performance, not the film — the same title moves between screens
+   mid-run, so the marker has to sit on the time. */
+.mock-times b i,
+.key-chip i {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.mock-times b.acc,
+.key-chip.acc {
+  background: #e8f1ec;
+}
+
+.mock-times b.acc i,
+.key-chip.acc i {
+  color: #1f6b4a;
+}
+
+.wc {
+  font-variant-emoji: text;
+  font-size: 12px;
+  line-height: 1;
+  color: #1f6b4a;
+  margin-left: 3px;
+  position: relative;
+  top: 0.5px;
+}
+
+.tag-acc {
+  flex: none;
+  align-self: center;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 1px 4px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* --- Key --- */
+
+.mock-key {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.mock-key-title {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a6a29a;
+  margin: 0 0 7px;
+}
+
+.key-item {
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+
+.key-item:last-child {
+  margin-bottom: 0;
+}
+
+.key-chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  background: var(--paper-dim);
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
 @media (max-width: 900px) {
   .compare {
     grid-template-columns: 1fr;
@@ -663,5 +749,55 @@ h1 {
   }
   .scroll-hint {
     display: flex;
+  }
+}
+
+/* --- Accessibility slide --- */
+
+.access-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.quote-figure {
+  margin: 0;
+}
+
+.quote-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 20px 40px -24px rgba(26, 26, 26, 0.28);
+}
+
+.quote-figure figcaption {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #a6a29a;
+  margin-top: 10px;
+}
+
+.access-points .compare-point {
+  margin-bottom: 20px;
+}
+
+.access-points code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.86em;
+  background: var(--paper-dim);
+  border-radius: 3px;
+  padding: 1px 4px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .access-layout {
+    grid-template-columns: 1fr;
   }
 }
