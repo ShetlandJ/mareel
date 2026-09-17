@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mareel What's On Widget — Proposal</title>
+<title>Mareel What's On — Widget &amp; Website Proposal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -97,6 +97,172 @@
 }</code></pre>
       </div>
       <p class="panel-footnote">Confirmed at both the show level and every individual performance time (e.g. "7:30PM Friday, 18 September 2026").</p>
+    </div>
+  </section>
+
+  <section class="slide" id="slide-flow">
+    <div class="slide-inner">
+      <p class="eyebrow">The website</p>
+      <h1>Five screens to find out what's on tonight</h1>
+      <p class="lede">
+        The widget is one way in. The other is Shetland Arts' own site — where
+        it's the same problem, one level up. This is the actual path, on a
+        phone, from a Google search to a list of films.
+      </p>
+
+      <div class="flow-strip">
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">1</span><span class="flow-name">Google "mareel"</span></p>
+          <img class="flow-shot" src="assets/website-flow/1-google-search-mareel.png" alt="Google results for 'mareel', showing Shetland Arts as the top result with sitelinks to Mareel Auditorium, Screen 2 and Auditorium">
+          <p class="flow-note">Sitelinks offer Auditorium and Screen&nbsp;2. None of them is listings.</p>
+        </div>
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">2</span><span class="flow-name">The venue page</span></p>
+          <img class="flow-shot" src="assets/website-flow/2-shetlandarts-venue-page.png" alt="The Mareel venue page on shetlandarts.org: a hero heading, tagline and building photo, with no listings visible">
+          <p class="flow-note">A marketing page. No films, no dates, nothing to click.</p>
+        </div>
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">3</span><span class="flow-name">Open the menu</span></p>
+          <img class="flow-shot" src="assets/website-flow/3-shetlandarts-nav-menu.png" alt="The Shetland Arts hamburger menu open, listing What's on, Our venues, About us, Learn, Venue hire, Blog and Support us">
+          <p class="flow-note">Listings live behind the hamburger, under "What's on".</p>
+        </div>
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">4</span><span class="flow-name">What's on</span></p>
+          <img class="flow-shot" src="assets/website-flow/4-whatson-listings-page.png" alt="The What's on page: a search box, an All Categories dropdown, an All Dates dropdown, then a mixed grid of events">
+          <p class="flow-note">Everything Shetland Arts runs — every venue, every art form.</p>
+        </div>
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">5</span><span class="flow-name">Filter to Film</span></p>
+          <img class="flow-shot" src="assets/website-flow/5-whatson-category-dropdown.png" alt="The All Categories dropdown open, showing eleven options with Film highlighted second in the list">
+          <p class="flow-note">Find "Film" among eleven options in a dropdown.</p>
+        </div>
+        <div class="flow-step">
+          <p class="flow-step-head"><span class="flow-num">6</span><span class="flow-name">A film. One.</span></p>
+          <img class="flow-shot wide" src="assets/website-flow/6-whatson-oversized-card.png" alt="A single film result card for Sunny Dancer: a full-width hero image, title, certificate, date range, venue and description, filling the phone screen">
+          <p class="flow-note">A full-width hero card each. One film fills the screen.</p>
+        </div>
+      </div>
+
+      <div class="flow-tally">
+        <strong>17 films</strong>
+        <p>are showing at Mareel between today and the end of September — every one of them behind those five screens. And the venue never gets a page of its own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="slide-scan">
+    <div class="slide-inner">
+      <p class="eyebrow">The destination</p>
+      <h1>And then it still doesn't scan</h1>
+      <p class="lede">
+        A cinema listing has one job: answer "what can I see tonight?". The
+        card grid answers a different question — it shows you one poster at a
+        time, and never tells you when the film starts.
+      </p>
+
+      <div class="compare">
+        <figure class="compare-col">
+          <figcaption class="compare-label now">What's on &rarr; Film, today</figcaption>
+          <div class="phone">
+            <img src="assets/website-flow/6-whatson-oversized-card.png" alt="The current film result card: full-width hero image, title Sunny Dancer, certificate 15, date range Fri 11 to Thu 17 Sep 2026, venue Mareel and a description">
+          </div>
+        </figure>
+
+        <figure class="compare-col">
+          <figcaption class="compare-label next">Proposed &mdash; /mareel/films</figcaption>
+          <div class="phone">
+            <div class="mock-bar"><span>SHETLAND ARTS</span><span>&#9776;</span></div>
+            <div class="mock-head">
+              <p class="mock-title">Film at Mareel</p>
+              <div class="mock-chips">
+                <span class="on">Today</span><span>Tomorrow</span><span>This week</span><span>All</span>
+              </div>
+            </div>
+            <div class="mock-list">
+              <p class="mock-day">Thu 17 Sep &middot; <em>Today</em></p>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Sights and Sounds of Shetland</span><span class="cert">PG</span></p>
+                <p class="mock-times"><b>1:30pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Sunny Dancer</span><span class="cert">15</span><span class="tag-last">Last day</span></p>
+                <p class="mock-times"><b>3:30pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Pressure</span><span class="cert">12A</span></p>
+                <p class="mock-times"><b>4:00pm</b><b>7:00pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">The Incomer</span><span class="cert">12A</span><span class="tag-last">Last day</span></p>
+                <p class="mock-times"><b>6:30pm</b></p>
+              </div>
+              <p class="mock-day">Fri 18 Sep</p>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Practical Magic 2</span><span class="cert">12A</span></p>
+                <p class="mock-times"><b>1:00pm</b><b>4:15pm</b><b>7:30pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Sights and Sounds of Shetland</span><span class="cert">PG</span></p>
+                <p class="mock-times"><b>1:30pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">One Night Only</span><span class="cert">15</span></p>
+                <p class="mock-times"><b>2:30pm</b></p>
+              </div>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Pressure</span><span class="cert">12A</span></p>
+                <p class="mock-times"><b>5:15pm</b></p>
+              </div>
+              <p class="mock-day">Sat 19 Sep</p>
+              <div class="mock-row">
+                <p class="mock-film"><span class="name">Matilda (30th Anniversary)</span><span class="cert">PG</span></p>
+                <p class="mock-times"><b>10:30am</b></p>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <div class="compare-points">
+          <p class="compare-point"><strong>Five films, eight showtimes, one screen.</strong> The same phone, the same scroll position — the current page spends all of it on a single poster.</p>
+          <p class="compare-point"><strong>Lead with the day, not the poster.</strong> People arrive with a date already in mind — tonight, Saturday, the school holidays.</p>
+          <p class="compare-point"><strong>Show the times.</strong> The current card gives a date range and a paragraph of blurb. It never says 7:30pm.</p>
+          <p class="compare-point"><strong>Same list language as the widget.</strong> One pattern for both places Mareel's programme appears.</p>
+          <div class="source-tag">
+            <span class="swatch"></span>
+            Every title, certificate and time is live box-office data, pulled today
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide dark" id="slide-source">
+    <div class="slide-inner">
+      <p class="eyebrow">Under the hood</p>
+      <h1>There's nothing to link to</h1>
+      <p class="lede">
+        The What's on page is served with eight identical placeholder cards and
+        fills them in from the box office after it loads. Nothing in the HTML
+        Shetland Arts' own server sends names a single film — and the category
+        filter never reaches the URL.
+      </p>
+
+      <div class="data-panel">
+        <p class="data-panel-title">view-source: shetlandarts.org/whats-on</p>
+        <pre><code>&lt;li class="card"&gt;
+  &lt;a href="#" aria-label="<span class="tok-amber">film name goes here</span>"&gt;
+    &lt;p class="event-category"&gt;Film&lt;/p&gt;
+    &lt;h2&gt;<span class="tok-amber">Film name</span>&lt;/h2&gt;
+    &lt;p class="date"&gt;<span class="tok-dim">3 - 19 Nov 2025</span>&lt;/p&gt;</code></pre>
+      </div>
+      <p class="panel-footnote">
+        &times;&nbsp;8, byte-identical, on every load. Searching that source for
+        "Practical Magic", "Matilda" or any other film Mareel is actually
+        showing returns nothing. <code>?category=film</code> changes the page not
+        at all.
+      </p>
+      <p class="url-line"><span class="dim">shetlandarts.org</span>/mareel/films</p>
+      <p class="panel-footnote url-note">One address, rendered on the server: indexable by Google, linkable from Shetland News, shareable in a WhatsApp group. None of which is possible today.</p>
     </div>
   </section>
 
