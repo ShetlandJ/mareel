@@ -11,8 +11,11 @@
   box-sizing: border-box;
 }
 
+/* Snapping is enabled only alongside click-to-advance (see the bottom of
+   this file). On touch, slides run taller than the viewport and snapping
+   fights the user's own scroll. */
 html {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: none;
 }
 
 body {
@@ -25,7 +28,6 @@ body {
 
 .slide {
   min-height: 100svh;
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,11 +144,13 @@ h1 {
   flex: none;
 }
 
+/* Hidden unless click-to-advance is actually available — same gate as the
+   script uses, so the hint never promises a click that does nothing. */
 .scroll-hint {
+  display: none;
   margin-top: clamp(32px, 6vw, 56px);
   font-size: 13px;
   color: var(--ink-soft);
-  display: flex;
   align-items: center;
   gap: 8px;
 }
@@ -650,7 +654,14 @@ h1 {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  html {
+    scroll-snap-type: y proximity;
+  }
   .slide {
     cursor: pointer;
+    scroll-snap-align: start;
+  }
+  .scroll-hint {
+    display: flex;
   }
 }
