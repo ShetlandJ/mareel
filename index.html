@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mareel What's On Widget — Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+
+  <section class="slide" id="slide-widget">
+    <div class="slide-inner">
+      <p class="eyebrow">Mareel — What's On widget</p>
+      <h1>The widget people actually see</h1>
+      <p class="lede">
+        Every day, Shetland News embeds Mareel's listings in three places on its
+        homepage — mobile, and both sidebars. It's the single biggest passive
+        audience Mareel's programme gets. Here's exactly what they see.
+      </p>
+
+      <div class="widget-showcase">
+        <div class="widget-frame">
+          <div class="widget-frame-bar">
+            <span class="dot"></span>
+            shetnews.co.uk
+          </div>
+          <img src="assets/current-widget-matilda.png" alt="The current Mareel What's on widget embedded on shetnews.co.uk, showing a single event (Matilda 30th Anniversary) with one date and no way to browse other dates">
+        </div>
+        <div class="widget-caption">
+          <p><strong>One event. One date. No way to look further ahead.</strong> The widget shows whatever is next, full stop — if you want to know what's on next week, or over Christmas, this doesn't tell you.</p>
+          <p>It's also a plain, non-interactive <code>&lt;iframe&gt;</code>: no filtering, no ticket status, nothing clickable beyond a link through to the full listings.</p>
+          <div class="source-tag">
+            <span class="swatch"></span>
+            Captured from shetnews.co.uk, 17 September 2026
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">&darr; scroll or click to continue</div>
+    </div>
+  </section>
+
+  <section class="slide" id="slide-proposal">
+    <div class="slide-inner">
+      <p class="eyebrow">The proposal</p>
+      <h1>Same footprint, a real list</h1>
+      <p class="lede">
+        Same slot in the sidebar. Instead of one static card, a scrollable list
+        of what's actually coming up — with a date-jump control and live ticket
+        status pulled straight from Shetland Arts' own box office.
+      </p>
+
+      <div class="widget-showcase">
+        <div class="widget-frame">
+          <div class="widget-frame-bar">
+            <span class="dot"></span>
+            shetnews.co.uk
+          </div>
+          <img src="assets/proposed-widget-ranges.png" alt="Proposed Mareel widget showing a scrollable list of upcoming events with date ranges like 25-27 Sept and 13-18 Oct, a jump-to-date control, and live Get tickets / limited availability status">
+        </div>
+        <div class="widget-caption">
+          <p><strong>The next few weeks at a glance, not just the next one event.</strong> Multi-day runs show their full range (13&ndash;18 Oct), and every entry carries its real ticket status.</p>
+          <p>The <strong>Jump to</strong> field scrolls straight to any date — useful the moment there's more on than fits one screen, like over Christmas.</p>
+          <div class="source-tag">
+            <span class="swatch"></span>
+            Mockup, built from live Shetland Arts ticketing data
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide dark" id="slide-feasibility">
+    <div class="slide-inner">
+      <p class="eyebrow">Feasibility</p>
+      <h1>Every field above is real</h1>
+      <p class="lede">
+        Shetland Arts' box office (Monad) already returns full availability per
+        event, and per individual performance time — sold out, limited, or
+        open — with no login and no token. We pulled this directly, today:
+      </p>
+
+      <div class="data-panel">
+        <p class="data-panel-title">POST tickets.shetlandarts.org/sales/Ajax/Ajax.svc/FolderShowSearch</p>
+        <pre><code>{
+  "FolderName": "Shetland Youth Theatre 2026/27",
+  "IsSoldOut": false,
+  "IsLimited": <span class="tok-amber">true</span>,
+  "FolderCallToAction": "Buy Tickets",
+  "FolderStatus": " (Limited Availability)"
+}</code></pre>
+      </div>
+      <p class="panel-footnote">Confirmed at both the show level and every individual performance time (e.g. "7:30PM Friday, 18 September 2026").</p>
+    </div>
+  </section>
+
+</main>
+<script>
+  (function () {
+    var slides = Array.from(document.querySelectorAll('.slide'));
+    var isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    document.addEventListener('click', function (e) {
+      if (!isDesktopPointer.matches) return;
+      if (e.target.closest('a, button, input, select, textarea')) return;
+
+      var mid = window.innerHeight / 2;
+      var current = slides.findIndex(function (s) {
+        var r = s.getBoundingClientRect();
+        return r.top <= mid && r.bottom >= mid;
+      });
+      var next = slides[current + 1];
+      if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+</script>
+</body>
+</html>
