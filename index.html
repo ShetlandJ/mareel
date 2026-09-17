@@ -239,30 +239,30 @@
   <section class="slide dark" id="slide-source">
     <div class="slide-inner">
       <p class="eyebrow">Under the hood</p>
-      <h1>There's nothing to link to</h1>
+      <h1>The filter never reaches the URL</h1>
       <p class="lede">
-        The What's on page is served with eight identical placeholder cards and
-        fills them in from the box office after it loads. Nothing in the HTML
-        Shetland Arts' own server sends names a single film — and the category
-        filter never reaches the URL.
+        Choose "Film" and the list does change. The address bar doesn't. There's
+        no link to copy, nothing to put in a Facebook post, nothing for Google to
+        send anyone to — the filtered view exists only inside your own browser.
       </p>
 
-      <div class="data-panel">
-        <p class="data-panel-title">view-source: shetlandarts.org/whats-on</p>
-        <pre><code>&lt;li class="card"&gt;
-  &lt;a href="#" aria-label="<span class="tok-amber">film name goes here</span>"&gt;
-    &lt;p class="event-category"&gt;Film&lt;/p&gt;
-    &lt;h2&gt;<span class="tok-amber">Film name</span>&lt;/h2&gt;
-    &lt;p class="date"&gt;<span class="tok-dim">3 - 19 Nov 2025</span>&lt;/p&gt;</code></pre>
+      <div class="addr-block">
+        <p class="addr-label">After five screens, filtered to Film</p>
+        <p class="addr"><span class="dim">https://</span>tickets.shetlandarts.org/sales</p>
+        <p class="addr-note">Character-for-character the same as the unfiltered page. No query string, no fragment &mdash; checked by driving the dropdown ourselves.</p>
       </div>
-      <p class="panel-footnote">
-        &times;&nbsp;8, byte-identical, on every load. Searching that source for
-        "Practical Magic", "Matilda" or any other film Mareel is actually
-        showing returns nothing. <code>?category=film</code> changes the page not
-        at all.
+
+      <div class="addr-block live">
+        <p class="addr-label">Meanwhile, already live &mdash; and linked from nowhere</p>
+        <p class="addr"><span class="dim">https://</span>tickets.shetlandarts.org/sales/categories/film</p>
+        <p class="addr-note">This page exists today and lists every film, Mareel-scoped. The nav doesn't link it, the venue page doesn't link it, the widget doesn't link it, and the category dropdown never takes you there.</p>
+      </div>
+
+      <p class="panel-footnote url-note">
+        Two small fixes: put the filter in the URL, and point the places people
+        actually start &mdash; Google, the venue page, the widget &mdash; at a film list
+        that already half exists.
       </p>
-      <p class="url-line"><span class="dim">shetlandarts.org</span>/mareel/films</p>
-      <p class="panel-footnote url-note">One address, rendered on the server: indexable by Google, linkable from Shetland News, shareable in a WhatsApp group. None of which is possible today.</p>
     </div>
   </section>
 

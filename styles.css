@@ -220,6 +220,7 @@ h1 {
 
 .panel-footnote {
   font-size: 14px;
+  line-height: 1.55;
   color: #a6a29a;
   margin: 20px 0 0;
   max-width: 640px;
@@ -583,23 +584,52 @@ h1 {
 
 /* --- Source-code slide --- */
 
-.url-line {
+.addr-block {
+  max-width: 720px;
+  margin: 0 0 22px;
+}
+
+.addr-label {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a6a29a;
+  margin: 0 0 8px;
+}
+
+.addr-block.live .addr-label {
+  color: #e8875f;
+}
+
+.addr {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: clamp(14px, 2.2vw, 20px);
+  font-size: clamp(13px, 1.9vw, 17px);
   color: var(--paper);
   background: #242320;
   border: 1px solid #37352f;
-  border-left: 3px solid #e8875f;
+  border-left: 3px solid #56534b;
   border-radius: 6px;
-  padding: 12px 16px;
-  margin: 22px 0 0;
-  display: inline-block;
-  max-width: 100%;
+  padding: 11px 16px;
+  margin: 0;
   overflow-x: auto;
+  white-space: nowrap;
 }
 
-.url-line .dim {
+.addr-block.live .addr {
+  border-left-color: #e8875f;
+}
+
+.addr .dim {
+  color: #78756e;
+}
+
+.addr-note {
+  font-size: 13.5px;
+  line-height: 1.5;
   color: #a6a29a;
+  margin: 9px 0 0;
 }
 
 .data-panel .tok-dim {
@@ -613,7 +643,10 @@ h1 {
 }
 
 .url-note {
-  margin-top: 12px;
+  max-width: 720px;
+  border-top: 1px solid #37352f;
+  padding-top: 16px;
+  margin-top: 6px;
 }
 
 @media (hover: hover) and (pointer: fine) {
