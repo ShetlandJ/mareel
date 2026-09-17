@@ -592,26 +592,6 @@ h1 {
   letter-spacing: 0.04em;
 }
 
-.mock-times b.acc,
-.key-chip.acc {
-  background: #e8f1ec;
-}
-
-.mock-times b.acc i,
-.key-chip.acc i {
-  color: #1f6b4a;
-}
-
-.wc {
-  font-variant-emoji: text;
-  font-size: 12px;
-  line-height: 1;
-  color: #1f6b4a;
-  margin-left: 3px;
-  position: relative;
-  top: 0.5px;
-}
-
 .tag-acc {
   flex: none;
   align-self: center;
